@@ -8,7 +8,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 ?>
 <html>
 <head>
-	<title>Online Shoe Store</title>
+	<title>Regal Time</title>
 	<link rel="icon" href="img/logo.jpg" />
 	<link rel = "stylesheet" type = "text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -31,7 +31,7 @@ $paypal_id='yhannaki@gmail.com'; // Business email ID
 
 	<div id="header">
 		<img src="img/logo.jpg">
-		<label>Online Shoe Store</label>
+		<label>Regal Time</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
