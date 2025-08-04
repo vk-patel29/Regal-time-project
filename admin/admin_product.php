@@ -91,7 +91,7 @@
 								<td><input type="number" name="qty" placeholder="No. of Stock" style="width:250px;" required></td>
 							</tr>
 							<tr>
-								<td><input type="hidden" name="category" value="basketball"></td>
+								<td><input type="hidden" name="category" value="men"></td>
 							</tr>
 						</table>
 					</center>
@@ -151,9 +151,9 @@
 			<li><a href="admin_home.php">Products</a>
 				<ul>
 					<li><a href="admin_feature.php "style="font-size:15px; margin-left:15px;">Features</a></li>
-					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Basketball</a></li>
-					<li><a href="admin_football.php" style="font-size:15px; margin-left:15px;">Football</a></li>
-					<li><a href="admin_running.php"style="font-size:15px; margin-left:15px;">Running</a></li>
+					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">men</a></li>
+					<li><a href="admin_women.php" style="font-size:15px; margin-left:15px;">women</a></li>
+					<li><a href="admin_kids.php"style="font-size:15px; margin-left:15px;">kids</a></li>
 				</ul>
 			</li>
 			<li><a href="transaction.php">Transactions</a></li>
@@ -164,7 +164,7 @@
 	</div>
 
 	<div id="rightcontent" style="position:absolute; top:10%;">
-			<div class="alert alert-info"><center><h2>Basketball</h2></center></div>
+			<div class="alert alert-info"><center><h2>men</h2></center></div>
 			<br />
 				<label  style="padding:5px; float:right;"><input type="text" name="filter" placeholder="Search Product here..." id="filter"></label>
 			<br />
@@ -184,7 +184,7 @@
 				<tbody>
 				<?php
 
-					$query = $conn->query("SELECT * FROM `product` WHERE category='basketball' ORDER BY product_id DESC") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `product` WHERE category='men' ORDER BY product_id DESC") or die(mysqli_error());
 					while($fetch = $query->fetch_array())
 						{
 						$id = $fetch['product_id'];

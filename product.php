@@ -116,9 +116,9 @@
 		<ul>
 			<li><a href="product.php" class="active" style="color:#111;">Men</a></li>
 			<li>|</li>
-			<li><a href="football.php">Women</a></li>
+			<li><a href="women.php">Women</a></li>
 			<li>|</li>
-			<li><a href="running.php">Kids</a></li>
+			<li><a href="kids.php">Kids</a></li>
 		</ul>
 
 	</div>
@@ -131,7 +131,7 @@
 			<?php
 			include ('function/addcart.php');
 
-				$query = $conn->query("SELECT *FROM product WHERE category='basketball' ORDER BY product_id DESC") or die (mysqli_error());
+				$query = $conn->query("SELECT *FROM product WHERE category='men' ORDER BY product_id DESC") or die (mysqli_error());
 
 					while($fetch = $query->fetch_array())
 						{

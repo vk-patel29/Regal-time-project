@@ -36,12 +36,11 @@
 		})
 		</script>
 
-
 </head>
 <body>
 	<div id="header" style="position:fixed;">
 		<img src="../img/logo.jpg">
-		<label>Online Shoe Store</label>
+		<label>Regal Time</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
@@ -93,7 +92,7 @@
 								<td><input type="number" name="qty" placeholder="No. of Stock" style="width:250px;" required></td>
 							</tr>
 							<tr>
-								<td><input type="hidden" name="category" value="basketball"></td>
+								<td><input type="hidden" name="category" value="men"></td>
 							</tr>
 						</table>
 					</center>
@@ -141,7 +140,7 @@
 
 				$q2 = $conn->query("INSERT INTO stock ( product_id, qty) VALUES ('$product_code','$qty')");
 
-				header ("location:admin_running.php");
+				header ("location:admin_women.php");
 			}}
 		}
 
@@ -153,9 +152,9 @@
 			<li><a href="admin_home.php">Products</a>
 				<ul>
 					<li><a href="admin_feature.php "style="font-size:15px; margin-left:15px;">Features</a></li>
-					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Basketball</a></li>
-					<li><a href="admin_football.php" style="font-size:15px; margin-left:15px;">Football</a></li>
-					<li><a href="admin_running.php"style="font-size:15px; margin-left:15px;">Running</a></li>
+					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">men</a></li>
+					<li><a href="admin_women.php" style="font-size:15px; margin-left:15px;">women</a></li>
+					<li><a href="admin_kids.php"style="font-size:15px; margin-left:15px;">kids</a></li>
 				</ul>
 			</li>
 			<li><a href="transaction.php">Transactions</a></li>
@@ -166,12 +165,12 @@
 	</div>
 
 	<div id="rightcontent" style="position:absolute; top:10%;">
-			<div class="alert alert-info"><center><h2>Running</h2></center></div>
+			<div class="alert alert-info"><center><h2>women</h2></center></div>
 			<br />
 				<label  style="padding:5px; float:right;"><input type="text" name="filter" placeholder="Search Product here..." id="filter"></label>
 			<br />
 
-		<div class="alert alert-info">
+			<div class="alert alert-info">
 			<table class="table table-hover" style="background-color:;">
 				<thead>
 				<tr style="font-size:20px;">
@@ -186,7 +185,7 @@
 				<tbody>
 				<?php
 
-					$query = $conn->query("SELECT * FROM `product` WHERE category='Running' ORDER BY product_id DESC") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `product` WHERE category='women' ORDER BY product_id DESC") or die(mysqli_error());
 					while($fetch = $query->fetch_array())
 						{
 						$id = $fetch['product_id'];
@@ -217,7 +216,8 @@
 				?>
 				</tbody>
 			</table>
-		</div>
+			</div>
+
   <?php
   /* stock in */
   if(isset($_POST['stockin'])){
@@ -231,9 +231,9 @@
   $new_stck = $_POST['new_stck'];
   $total = $old_stck + $new_stck;
 
-  $que = $conn->query("UPDATE `stock` SET `qty` = '$total' WHERE `product_id`='$pid'") or die(mysql_error());
-  echo "<script>window.location = 'admin_running.php'</script>";
-  //header("Location:admin_running.php");
+  $que = $conn->query("UPDATE `stock` SET `qty` = '$total' WHERE `product_id`='$pid'") or die(mysqli_error());
+  echo "<script>window.location = 'admin_women.php'</script>";
+  //header("Location:admin_women.php");
  }
 
   /* stock out */
@@ -249,9 +249,8 @@
   $total = $old_stck - $new_stck;
 
   $que = $conn->query("UPDATE `stock` SET `qty` = '$total' WHERE `product_id`='$pid'") or die(mysqli_error());
-
-  echo "<script>window.location = 'admin_running.php'</script>";
-  //header("Location:admin_running.php");
+  echo "<script>window.location = 'admin_women.php'</script>";
+  //header("Location:admin_women.php");
  }
   ?>
 

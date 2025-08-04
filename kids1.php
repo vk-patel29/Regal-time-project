@@ -110,9 +110,9 @@
 			<ul>
 				<li><a href="product1.php">Men</a></li>
 				<li>|</li>
-				<li><a href="football1.php" class="active" style="color:#111;">Women</a></li>
+				<li><a href="women1.php">Women</a></li>
 				<li>|</li>
-				<li><a href="running1.php">Kids</a></li>
+				<li><a href="kids1.php" class="active" style="color:#111;">Kids</a></li>
 			</ul>
 				<a href="cart.php"><button class="btn btn-inverse" style="right:1%; position:fixed; top:10%;"><i class="icon-shopping-cart icon-white"></i> View Cart</button></a>
 		</div>
@@ -124,33 +124,33 @@
 
 			<?php
 
-				$query = $conn->query("SELECT * FROM product WHERE category='football' ORDER BY product_id DESC");
+				$query = $conn->query("SELECT *FROM product WHERE category='kids' ORDER BY product_id DESC") or die (mysqli_error());
 
-				if (!$query) {
-					die("Query failed: " . $conn->error);
-				}
+					while($fetch = $query->fetch_array())
+						{
 
-				while ($fetch = $query->fetch_assoc()) {
-					$pid = $fetch['product_id'];
+						$pid = $fetch['product_id'];
 
-					$query1 = $conn->query("SELECT qty FROM stock WHERE product_id = '$pid'");
-					if (!$query1) {
-						die("Stock query failed: " . $conn->error);
-					}
+						$query1 = $conn->query("SELECT * FROM stock WHERE product_id = '$pid'") or die (mysqli_error());
+						$rows = $query1->fetch_array();
 
-					$stock = $query1->fetch_assoc();
+						$qty = $rows['qty'];
+						if($qty <= 5){
 
-					if ($stock['qty'] > 5) {
-						echo "<div class='float'>";
-						echo "<center>";
-						echo "<a href='details.php?id={$fetch['product_id']}'><img class='img-polaroid' src='photo/{$fetch['product_image']}' height='300px' width='300px'></a>";
-						echo "{$fetch['product_name']}<br />";
-						echo "Price {$fetch['product_price']}<br />";
-						echo "<h3 class='text-info'>Size: {$fetch['product_size']}</h3>";
-						echo "</center>";
-						echo "</div>";
-					}
-				}
+						}else{
+							echo "<div class='float'>";
+							echo "<center>";
+							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='photo/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
+							echo "".$fetch['product_name']."";
+							echo "<br />";
+							echo "Price. ".$fetch['product_price']."";
+							echo "<br />";
+							echo "<h3 class='text-info'> Size: ".$fetch['product_size']."</h3>";
+							echo "</center>";
+							echo "</div>";
+						}
+
+						}
 			?>
 		</div>
 
@@ -165,8 +165,7 @@
 	<div id="footer">
 		<div class="foot">
 			<!-- <label style="font-size:17px;"> Copyrght &copy; </label> -->
-			<p style="font-size:13px;"> Copyright &copy; Online Shoe Store Inc. 2025 Brought To You by Prem Prem</a></p>
-		</div>
+			<p style="font-size:13px;"> Copyright &copy; Online Shoe Store Inc. 2025 Brought To You by Prem Prem</a></p>		</div>
 
 			<div id="foot">
 				<h4>Links</h4>

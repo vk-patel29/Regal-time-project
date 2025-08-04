@@ -110,9 +110,9 @@
 			<ul>
 				<li><a href="product1.php" class="active" style="color:#111;">Men</a></li>
 				<li>|</li>
-				<li><a href="football1.php">Women</a></li>
+				<li><a href="women1.php">Women</a></li>
 				<li>|</li>
-				<li><a href="running1.php">Kids</a></li>
+				<li><a href="kids1.php">Kids</a></li>
 			</ul>
 				<?php echo "<a href='cart.php?id=".$id."&action=view'><button class='btn btn-inverse' style='right:1%; position:fixed; top:10%;'><i class='icon-shopping-cart icon-white'></i> View Cart</button></a>" ?>
 		</div>
@@ -126,7 +126,7 @@
 			<?php
 				include ('function/addcart.php');
 
-				$query = $conn->query("SELECT *FROM product WHERE category='basketball' ORDER BY product_id DESC") or die (mysqli_error());
+				$query = $conn->query("SELECT *FROM product WHERE category='men' ORDER BY product_id DESC") or die (mysqli_error());
 
 					while($fetch = $query->fetch_array())
 						{

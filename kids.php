@@ -116,9 +116,9 @@
 		<ul>
 			<li><a href="product.php">Men</a></li>
 			<li>|</li>
-			<li><a href="football.php" >Women</a></li>
+			<li><a href="women.php" >Women</a></li>
 			<li>|</li>
-			<li><a href="running.php" class="active" style="color:#111;">Kids</a></li>
+			<li><a href="kids.php" class="active" style="color:#111;">Kids</a></li>
 		</ul>
 	</div>
 
@@ -129,7 +129,7 @@
 
 			<?php
 
-				$query = $conn->query("SELECT *FROM product WHERE category='running' ORDER BY product_id DESC") or die (mysqli_error());
+				$query = $conn->query("SELECT *FROM product WHERE category='kids' ORDER BY product_id DESC") or die (mysqli_error());
 
 					while($fetch = $query->fetch_array())
 						{
