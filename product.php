@@ -116,9 +116,9 @@
 		<ul>
 			<li><a href="product.php" class="active" style="color:#111;">Men</a></li>
 			<li>|</li>
-			<li><a href="football.php">Women</a></li>
+			<li><a href="Women.php">Women</a></li>
 			<li>|</li>
-			<li><a href="running.php">Kids</a></li>
+			<li><a href="Kids.php">Kids</a></li>
 		</ul>
 
 	</div>
@@ -131,7 +131,7 @@
 			<?php
 			include ('function/addcart.php');
 
-				$query = $conn->query("SELECT *FROM product WHERE category='basketball' ORDER BY product_id DESC") or die (mysqli_error());
+				$query = $conn->query("SELECT *FROM product WHERE category='Men' ORDER BY product_id DESC") or die (mysqli_error());
 
 					while($fetch = $query->fetch_array())
 						{
@@ -147,7 +147,7 @@
 						}else{
 							echo "<div class='float'>";
 							echo "<center>";
-							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='photo/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
+							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='img/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
 							echo "".$fetch['product_name']."";
 							echo "<br />";
 							echo "P ".$fetch['product_price']."";
@@ -172,16 +172,16 @@
 	<div id="footer">
 		<div class="foot">
 			<!-- <label style="font-size:17px;"> Copyrght &copy; </label> -->
-			<p style="font-size:13px;"> Copyright &copy; Online Shoe Store Inc. 2025 Brought To You by Prem Prem</a></p>
+			<p style="font-size:13px;"> Copyright &copy; Regal Time Inc. 2025 Brought To You by Prem Prem</a></p>
 		</div>
 
 			<div id="foot">
 				<h4>Links</h4>
 					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+						<a href="http://www.facebook.com/regaltime"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/regaltime"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/regaltime"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/regaltime"><li>Tumblr</li></a>
 					</ul>
 			</div>
 	</div>

@@ -145,7 +145,7 @@
 						<br />
 						<h4>Total: P <?php echo $row['product_price']; ?> </h4>
 						<br />
-						<input type="checkbox" required> I Agree the <a href="#terms" data-toggle="modal"> Terms and Condition</a> of Online Shoe Store Inc.
+						<input type="checkbox" required> I Agree the <a href="#terms" data-toggle="modal"> Terms and Condition</a> of Regal Time Inc.
 					</center>
 				</div>
 			<div class="modal-footer">
@@ -161,7 +161,7 @@
 		<div id="terms" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-				<h3 id="myModalLabel">Online Shoe Store Inc. Terms and Condition</h3>
+				<h3 id="myModalLabel">Regal Time Inc. Terms and Condition</h3>
 			</div>
 				<div class="modal-body">
 					<ul>
@@ -188,16 +188,16 @@
 	<div id="footer">
 		<div class="foot">
 			<!-- <label style="font-size:17px;"> Copyrght &copy; </label> -->
-			<p style="font-size:13px;"> Copyright &copy; Online Shoe Store Inc. 2025 Brought To You by Prem Prem</a></p>
+			<p style="font-size:13px;"> Copyright &copy; Regal Time Inc. 2025 Brought To You by Prem Prem</a></p>
 		</div>
 
 			<div id="foot">
 				<h4>Links</h4>
 					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+						<a href="http://www.facebook.com/regaltime"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/regaltime"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/regaltime"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/regaltime"><li>Tumblr</li></a>
 					</ul>
 			</div>
 	</div>

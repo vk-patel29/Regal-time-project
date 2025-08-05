@@ -110,9 +110,9 @@
 			<ul>
 				<li><a href="product1.php">Men</a></li>
 				<li>|</li>
-				<li><a href="football1.php">Women</a></li>
+				<li><a href="Women1.php" class="active" style="color:#111;">Women</a></li>
 				<li>|</li>
-				<li><a href="running1.php" class="active" style="color:#111;">Kids</a></li>
+				<li><a href="Kids1.php">Kids</a></li>
 			</ul>
 				<a href="cart.php"><button class="btn btn-inverse" style="right:1%; position:fixed; top:10%;"><i class="icon-shopping-cart icon-white"></i> View Cart</button></a>
 		</div>
@@ -124,33 +124,33 @@
 
 			<?php
 
-				$query = $conn->query("SELECT *FROM product WHERE category='running' ORDER BY product_id DESC") or die (mysqli_error());
+				$query = $conn->query("SELECT * FROM product WHERE category='Women' ORDER BY product_id DESC");
 
-					while($fetch = $query->fetch_array())
-						{
+				if (!$query) {
+					die("Query failed: " . $conn->error);
+				}
 
-						$pid = $fetch['product_id'];
+				while ($fetch = $query->fetch_assoc()) {
+					$pid = $fetch['product_id'];
 
-						$query1 = $conn->query("SELECT * FROM stock WHERE product_id = '$pid'") or die (mysqli_error());
-						$rows = $query1->fetch_array();
+					$query1 = $conn->query("SELECT qty FROM stock WHERE product_id = '$pid'");
+					if (!$query1) {
+						die("Stock query failed: " . $conn->error);
+					}
 
-						$qty = $rows['qty'];
-						if($qty <= 5){
+					$stock = $query1->fetch_assoc();
 
-						}else{
-							echo "<div class='float'>";
-							echo "<center>";
-							echo "<a href='details.php?id=".$fetch['product_id']."'><img class='img-polaroid' src='photo/".$fetch['product_image']."' height = '300px' width = '300px'></a>";
-							echo "".$fetch['product_name']."";
-							echo "<br />";
-							echo "Price. ".$fetch['product_price']."";
-							echo "<br />";
-							echo "<h3 class='text-info'> Size: ".$fetch['product_size']."</h3>";
-							echo "</center>";
-							echo "</div>";
-						}
-
-						}
+					if ($stock['qty'] > 5) {
+						echo "<div class='float'>";
+						echo "<center>";
+						echo "<a href='details.php?id={$fetch['product_id']}'><img class='img-polaroid' src='img/{$fetch['product_image']}' height='300px' width='300px'></a>";
+						echo "{$fetch['product_name']}<br />";
+						echo "Price {$fetch['product_price']}<br />";
+						echo "<h3 class='text-info'>Size: {$fetch['product_size']}</h3>";
+						echo "</center>";
+						echo "</div>";
+					}
+				}
 			?>
 		</div>
 
@@ -165,15 +165,16 @@
 	<div id="footer">
 		<div class="foot">
 			<!-- <label style="font-size:17px;"> Copyrght &copy; </label> -->
-			<p style="font-size:13px;"> Copyright &copy; Online Shoe Store Inc. 2025 Brought To You by Prem Prem</a></p>		</div>
+			<p style="font-size:13px;"> Copyright &copy; Regal Time Inc. 2025 Brought To You by Prem Prem</a></p>
+		</div>
 
 			<div id="foot">
 				<h4>Links</h4>
 					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+						<a href="http://www.facebook.com/regaltime"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/regaltime"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/regaltime"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/regaltime"><li>Tumblr</li></a>
 					</ul>
 			</div>
 	</div>

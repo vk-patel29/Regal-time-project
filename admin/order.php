@@ -61,7 +61,7 @@
 <body>
 	<div id="header" style="position:fixed;">
 		<img src="../img/logo.jpg">
-		<label>Online Shoe Store</label>
+		<label>Regal Time</label>
 
 			<?php
 				$id = (int) $_SESSION['id'];
@@ -112,7 +112,7 @@
 								<td><input type="number" name="qty" placeholder="No. of Stock" style="width:250px;" required></td>
 							</tr>
 							<tr>
-								<td><input type="hidden" name="category" value="basketball"></td>
+								<td><input type="hidden" name="category" value="Men"></td>
 							</tr>
 						</table>
 					</center>
@@ -172,9 +172,9 @@
 			<li><a href="admin_home.php">Products</a>
 				<ul>
 					<li><a href="admin_feature.php "style="font-size:15px; margin-left:15px;">Features</a></li>
-					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Basketball</a></li>
-					<li><a href="admin_football.php" style="font-size:15px; margin-left:15px;">Football</a></li>
-					<li><a href="admin_running.php"style="font-size:15px; margin-left:15px;">Running</a></li>
+					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Men</a></li>
+					<li><a href="admin_Women.php" style="font-size:15px; margin-left:15px;">Women</a></li>
+					<li><a href="admin_Kids.php"style="font-size:15px; margin-left:15px;">Kids</a></li>
 				</ul>
 			</li>
 			<li><a href="transaction.php">Transactions</a></li>

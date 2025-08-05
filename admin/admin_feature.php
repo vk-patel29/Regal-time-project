@@ -131,7 +131,7 @@
 									}
 									else
 									{
-										move_uploaded_file($temp,"../photo/".$name);
+										move_uploaded_file($temp,"../img/".$name);
 
 
 				$q1 = $conn->query("INSERT INTO product ( product_id,product_name, product_price, product_size, product_image, brand, category)
@@ -151,9 +151,9 @@
 			<li><a href="admin_home.php">Products</a>
 				<ul>
 					<li><a href="admin_feature.php "style="font-size:15px; margin-left:15px;">Features</a></li>
-					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Basketball</a></li>
-					<li><a href="admin_football.php" style="font-size:15px; margin-left:15px;">Football</a></li>
-					<li><a href="admin_running.php"style="font-size:15px; margin-left:15px;">Running</a></li>
+					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Men</a></li>
+					<li><a href="admin_Women.php" style="font-size:15px; margin-left:15px;">Women</a></li>
+					<li><a href="admin_Kids.php"style="font-size:15px; margin-left:15px;">Kids</a></li>
 				</ul>
 			</li>
 			<li><a href="transaction.php">Transactions</a></li>
@@ -190,7 +190,7 @@
 						$id = $fetch['product_id'];
 				?>
 				<tr class="del<?php echo $id?>">
-					<td><img class="img-polaroid" src = "../photo/<?php echo $fetch['product_image']?>" height = "70px" width = "80px"></td>
+					<td><img class="img-polaroid" src = "../img/<?php echo $fetch['product_image']?>" height = "70px" width = "80px"></td>
 					<td><?php echo $fetch['product_name']?></td>
 					<td><?php echo $fetch['product_price']?></td>
 					<td><?php echo $fetch['product_size']?></td>

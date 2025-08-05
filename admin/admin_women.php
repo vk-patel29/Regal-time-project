@@ -92,7 +92,7 @@
 								<td><input type="number" name="qty" placeholder="No. of Stock" style="width:250px;" required></td>
 							</tr>
 							<tr>
-								<td><input type="hidden" name="category" value="basketball"></td>
+								<td><input type="hidden" name="category" value="Men"></td>
 							</tr>
 						</table>
 					</center>
@@ -132,7 +132,7 @@
 									}
 									else
 									{
-										move_uploaded_file($temp,"../photo/".$name);
+										move_uploaded_file($temp,"../img/".$name);
 
 
 				$q1 = $conn->query("INSERT INTO product ( product_id,product_name, product_price, product_size, product_image, brand, category)
@@ -140,7 +140,7 @@
 
 				$q2 = $conn->query("INSERT INTO stock ( product_id, qty) VALUES ('$product_code','$qty')");
 
-				header ("location:admin_football.php");
+				header ("location:admin_Women.php");
 			}}
 		}
 
@@ -152,9 +152,9 @@
 			<li><a href="admin_home.php">Products</a>
 				<ul>
 					<li><a href="admin_feature.php "style="font-size:15px; margin-left:15px;">Features</a></li>
-					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Basketball</a></li>
-					<li><a href="admin_football.php" style="font-size:15px; margin-left:15px;">Football</a></li>
-					<li><a href="admin_running.php"style="font-size:15px; margin-left:15px;">Running</a></li>
+					<li><a href="admin_product.php "style="font-size:15px; margin-left:15px;">Men</a></li>
+					<li><a href="admin_Women.php" style="font-size:15px; margin-left:15px;">Women</a></li>
+					<li><a href="admin_Kids.php"style="font-size:15px; margin-left:15px;">Kids</a></li>
 				</ul>
 			</li>
 			<li><a href="transaction.php">Transactions</a></li>
@@ -165,7 +165,7 @@
 	</div>
 
 	<div id="rightcontent" style="position:absolute; top:10%;">
-			<div class="alert alert-info"><center><h2>Football</h2></center></div>
+			<div class="alert alert-info"><center><h2>Women</h2></center></div>
 			<br />
 				<label  style="padding:5px; float:right;"><input type="text" name="filter" placeholder="Search Product here..." id="filter"></label>
 			<br />
@@ -185,13 +185,13 @@
 				<tbody>
 				<?php
 
-					$query = $conn->query("SELECT * FROM `product` WHERE category='football' ORDER BY product_id DESC") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `product` WHERE category='Women' ORDER BY product_id DESC") or die(mysqli_error());
 					while($fetch = $query->fetch_array())
 						{
 						$id = $fetch['product_id'];
 				?>
 				<tr class="del<?php echo $id?>">
-					<td><img class="img-polaroid" src = "../photo/<?php echo $fetch['product_image']?>" height = "70px" width = "80px"></td>
+					<td><img class="img-polaroid" src = "../img/<?php echo $fetch['product_image']?>" height = "70px" width = "80px"></td>
 					<td><?php echo $fetch['product_name']?></td>
 					<td><?php echo $fetch['product_price']?></td>
 					<td><?php echo $fetch['product_size']?></td>
@@ -232,8 +232,8 @@
   $total = $old_stck + $new_stck;
 
   $que = $conn->query("UPDATE `stock` SET `qty` = '$total' WHERE `product_id`='$pid'") or die(mysqli_error());
-  echo "<script>window.location = 'admin_football.php'</script>";
-  //header("Location:admin_football.php");
+  echo "<script>window.location = 'admin_Women.php'</script>";
+  //header("Location:admin_Women.php");
  }
 
   /* stock out */
@@ -249,8 +249,8 @@
   $total = $old_stck - $new_stck;
 
   $que = $conn->query("UPDATE `stock` SET `qty` = '$total' WHERE `product_id`='$pid'") or die(mysqli_error());
-  echo "<script>window.location = 'admin_football.php'</script>";
-  //header("Location:admin_football.php");
+  echo "<script>window.location = 'admin_Women.php'</script>";
+  //header("Location:admin_Women.php");
  }
   ?>
 

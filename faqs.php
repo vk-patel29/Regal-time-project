@@ -117,16 +117,16 @@
 	<div id="footer">
 		<div class="foot">
 			<!-- <label style="font-size:17px;"> Copyrght &copy; </label> -->
-			<p style="font-size:13px;"> Copyright &copy; Online Shoe Store Inc. 2025 Brought To You by Prem Prem</a></p>
+			<p style="font-size:13px;"> Copyright &copy; Regal Time Inc. 2025 Brought To You by Prem Prem</a></p>
 		</div>
 
 			<div id="foot">
 				<h4>Links</h4>
 					<ul>
-						<a href="http://www.facebook.com/OnlineShoeStore"><li>Facebook</li></a>
-						<a href="http://www.twitter.com/OnlineShoeStore"><li>Twitter</li></a>
-						<a href="http://www.pinterest.com/OnlineShoeStore"><li>Pinterest</li></a>
-						<a href="http://www.tumblr.com/OnlineShoeStore"><li>Tumblr</li></a>
+						<a href="http://www.facebook.com/regaltime"><li>Facebook</li></a>
+						<a href="http://www.twitter.com/regaltime"><li>Twitter</li></a>
+						<a href="http://www.pinterest.com/regaltime"><li>Pinterest</li></a>
+						<a href="http://www.tumblr.com/regaltime"><li>Tumblr</li></a>
 					</ul>
 			</div>
 	</div>
