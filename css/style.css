@@ -80,6 +80,8 @@ body{
 #content
 	{
 		top:10px;
+		height: 1000px;
+		width: 1000px;
 	}
 
 .nav {
@@ -113,6 +115,7 @@ body{
 .hero{
 	width:100%;
 	height:500px;
+	margin-bottom: 100px;
 }
 
 
@@ -212,7 +215,8 @@ body{
 	{
 		position:relative;
 		width:1150px;
-		height:auto;	
+		height:auto;
+		margin-top: 200px;	
 	}
 
 .float

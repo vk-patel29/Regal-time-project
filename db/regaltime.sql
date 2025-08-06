@@ -126,7 +126,9 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_price`, `product_s
 (9,'Omega Seamaster Aqua Terra Watch','6,800','34','w1.jpg','Omega','feature'),
 (10,'Omega Constellation Ladies Watch ','11,400','33','w2.jpg','Omega','feature'),
 (11,':WatchOut Wearables Champion Kids and Teens Smartwatch','2,499','25','k1.jpg','WatchOut','feature'),
-(12,'Fastrack Jupiter S1 Smartwatch Fastrack','1,999','27','k2.jpg','Fastrak','feature');
+(12,'Fastrack Jupiter S1 Smartwatch Fastrack','1,999','27','k2.jpg','Fastrak','feature'),
+(13,'De Ville Mini Trésor','4,83,800','28','w3.jpg','Omega','women'),
+(14,'Rolex Land‑Dweller Opening new horizons','12,00,000','33','m3.jpg','Rolex','men');
 -- --------------------------------------------------------
 
 --
@@ -155,7 +157,9 @@ INSERT INTO `stock` (`stock_id`, `product_id`, `qty`) VALUES
 (9, 9, 20),
 (10, 10, 20),
 (11, 11, 20),
-(12, 12, 20);
+(12, 12, 20),
+(13,13,20),
+(14,14,20);
 
 -- --------------------------------------------------------
 
